@@ -1,0 +1,127 @@
+.form-modal {
+  padding: 2rem;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 100, 0.2);
+  border-radius: 4px;
+  color: #f5f0e8;
+
+  .modal-title-text {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #d4af64;
+    letter-spacing: 0.06em;
+  }
+
+  .modal-sub {
+    color: rgba(245, 240, 232, 0.6);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  .form-label-custom {
+    color: rgba(245, 240, 232, 0.75);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .form-control-modal {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(212, 175, 100, 0.3);
+    border-radius: 2px;
+    color: #f5f0e8;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    transition: border-color 0.25s;
+
+    &::placeholder {
+      color: rgba(245, 240, 232, 0.3);
+    }
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(212, 175, 100, 0.7);
+      box-shadow: 0 0 0 2px rgba(212, 175, 100, 0.12);
+      color: #f5f0e8;
+    }
+  }
+
+  .input-group-text.input-icon {
+    background: rgba(212, 175, 100, 0.15);
+    border: 1px solid rgba(212, 175, 100, 0.3);
+    border-right: none;
+    color: #d4af64;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .input-group .form-control-modal {
+    border-radius: 0 2px 2px 0;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #c9963a, #d4af64, #b8872e);
+    border: none;
+    color: #0a0a0f;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: opacity 0.25s, transform 0.15s;
+
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  .btn-outline-gold {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 100, 0.5);
+    color: #d4af64;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.25s;
+
+    &:hover {
+      background: rgba(212, 175, 100, 0.1);
+      border-color: #d4af64;
+      color: #d4af64;
+    }
+  }
+
+  .btn-close {
+    filter: invert(1);
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .success-icon-wrap {
+    i {
+      font-size: 3.5rem;
+      color: #d4af64;
+    }
+  }
+
+  .error-alert {
+    background: rgba(220, 53, 69, 0.15);
+    border: 1px solid rgba(220, 53, 69, 0.4);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    color: #ff8a94;
+    font-size: 0.85rem;
+  }
+}
