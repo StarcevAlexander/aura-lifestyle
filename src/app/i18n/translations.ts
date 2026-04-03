@@ -1,0 +1,153 @@
+export type Lang = 'en' | 'ru';
+
+export const translations = {
+  en: {
+    slogan: 'From Dreams to Life',
+    nav: {
+      relocation: 'Relocation',
+      business: 'Business',
+      lifestyle: 'Lifestyle',
+    },
+    sections: {
+      relocation: {
+        label: '01',
+        title: 'Relocation',
+        services: [
+          'City introduction and orientation',
+          'Area selection for living',
+          'School search and placement support',
+          'Visa and residency guidance',
+          'Health insurance selection',
+          'Driving license assistance',
+          'Medical centers and healthcare guidance',
+        ],
+      },
+      business: {
+        label: '02',
+        title: 'Business',
+        services: [
+          'Market introduction and insights',
+          'Free zone setup guidance',
+          'Mainland business setup',
+          'Company registration',
+          'Government support programs',
+          'Developer and real estate connections',
+          'Investment opportunities',
+        ],
+      },
+      lifestyle: {
+        label: '03',
+        title: 'Lifestyle',
+        services: [
+          'Community and networking',
+          'Events and social activities',
+          'Tourist programs and experiences',
+          'Hotel life',
+          'Restaurants',
+          'Shopping malls and retail guidance',
+          'Beauty and wellness world',
+        ],
+      },
+    },
+    cta: 'Get in touch',
+    contact: {
+      title: 'Contact',
+      sub: 'For inquiries, please contact us',
+      btn: 'Send a message',
+    },
+    form: {
+      titlePrefix: '',
+      namePlaceholder: 'Your name',
+      phonePlaceholder: '+968 XXXX XXXX',
+      messagePlaceholder: 'Tell us about your needs...',
+      nameLabel: 'Your Name *',
+      phoneLabel: 'Phone Number *',
+      messageLabel: 'Message (optional)',
+      submit: 'Send Request',
+      sending: 'Sending...',
+      successTitle: 'Request Sent!',
+      successText: 'We will get back to you shortly.',
+      ok: 'OK',
+      errName: 'Please enter your name',
+      errPhone: 'Please enter a valid phone number',
+      errSend: 'Sending error. Please try again or contact us directly.',
+    },
+    footer: 'Oman',
+  },
+
+  ru: {
+    slogan: 'От мечты к жизни',
+    nav: {
+      relocation: 'Переезд',
+      business: 'Бизнес',
+      lifestyle: 'Образ жизни',
+    },
+    sections: {
+      relocation: {
+        label: '01',
+        title: 'Переезд',
+        services: [
+          'Знакомство с городом и ориентирование',
+          'Подбор района для проживания',
+          'Поиск школы и помощь с поступлением',
+          'Визовое и резидентское сопровождение',
+          'Подбор медицинской страховки',
+          'Помощь с получением водительских прав',
+          'Медицинские центры и помощь с здравоохранением',
+        ],
+      },
+      business: {
+        label: '02',
+        title: 'Бизнес',
+        services: [
+          'Знакомство с рынком и аналитика',
+          'Сопровождение в свободных зонах',
+          'Открытие бизнеса на материке',
+          'Регистрация компании',
+          'Государственные программы поддержки',
+          'Связи с девелоперами и недвижимостью',
+          'Инвестиционные возможности',
+        ],
+      },
+      lifestyle: {
+        label: '03',
+        title: 'Образ жизни',
+        services: [
+          'Сообщество и нетворкинг',
+          'Мероприятия и социальная жизнь',
+          'Туристические программы и впечатления',
+          'Жизнь в отеле',
+          'Рестораны',
+          'Торговые центры и шопинг',
+          'Красота и велнес',
+        ],
+      },
+    },
+    cta: 'Связаться',
+    contact: {
+      title: 'Контакты',
+      sub: 'По всем вопросам обращайтесь к нам',
+      btn: 'Написать нам',
+    },
+    form: {
+      titlePrefix: '',
+      namePlaceholder: 'Ваше имя',
+      phonePlaceholder: '+968 XXXX XXXX',
+      messagePlaceholder: 'Расскажите о ваших пожеланиях...',
+      nameLabel: 'Ваше имя *',
+      phoneLabel: 'Номер телефона *',
+      messageLabel: 'Сообщение (необязательно)',
+      submit: 'Отправить',
+      sending: 'Отправка...',
+      successTitle: 'Заявка отправлена!',
+      successText: 'Мы свяжемся с вами в ближайшее время.',
+      ok: 'ОК',
+      errName: 'Пожалуйста, введите ваше имя',
+      errPhone: 'Пожалуйста, введите корректный номер телефона',
+      errSend: 'Ошибка отправки. Попробуйте ещё раз или напишите нам на почту.',
+    },
+    footer: 'Оман',
+  },
+} as const satisfies Record<Lang, unknown>;
+
+export type Translations = (typeof translations)[Lang];

@@ -1,17 +1,96 @@
-<div class="hero">
-  <div class="hero__overlay"></div>
+<!-- LANG TOGGLE -->
+<button class="lang-toggle" (click)="toggleLang()" [attr.aria-label]="lang() === 'en' ? 'Switch to Russian' : 'Switch to English'">
+  <span [class.active]="lang() === 'en'">EN</span>
+  <span class="lang-sep">|</span>
+  <span [class.active]="lang() === 'ru'">RU</span>
+</button>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__overlay"></div>
   <div class="hero__content">
     <div class="hero__brand">
-      <h1 class="hero__title">AURA</h1>
-      <p class="hero__subtitle"><em>Lifestyle &amp; Relocation</em></p>
-      <p class="hero__location">Oman</p>
+      <h1 class="hero__title">AMANI</h1>
+      <p class="hero__slogan">{{ t().slogan }}</p>
     </div>
-
-    <div class="hero__actions">
-      <button class="hero__btn" (click)="openForm('Relocation')">Relocation</button>
-      <button class="hero__btn" (click)="openForm('Business')">Business</button>
-      <button class="hero__btn" (click)="openForm('Lifestyle')">Lifestyle</button>
-    </div>
+    <nav class="hero__nav">
+      <a class="hero__nav-link" (click)="scrollTo('relocation')">{{ t().nav.relocation }}</a>
+      <span class="hero__nav-sep"></span>
+      <a class="hero__nav-link" (click)="scrollTo('business')">{{ t().nav.business }}</a>
+      <span class="hero__nav-sep"></span>
+      <a class="hero__nav-link" (click)="scrollTo('lifestyle')">{{ t().nav.lifestyle }}</a>
+    </nav>
   </div>
-</div>
+  <div class="hero__scroll-hint" (click)="scrollTo('relocation')">
+    <span class="hero__scroll-arrow"></span>
+  </div>
+</section>
+
+<!-- RELOCATION -->
+<section id="relocation" class="service-section service-section--light">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">{{ t().sections.relocation.label }}</span>
+      <h2 class="section-title">{{ t().sections.relocation.title }}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="service-list">
+      @for (item of t().sections.relocation.services; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+    <button class="section-cta" (click)="openForm(t().sections.relocation.title)">{{ t().cta }}</button>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section id="business" class="service-section service-section--sand">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">{{ t().sections.business.label }}</span>
+      <h2 class="section-title">{{ t().sections.business.title }}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="service-list">
+      @for (item of t().sections.business.services; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+    <button class="section-cta" (click)="openForm(t().sections.business.title)">{{ t().cta }}</button>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section id="lifestyle" class="service-section service-section--light">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">{{ t().sections.lifestyle.label }}</span>
+      <h2 class="section-title">{{ t().sections.lifestyle.title }}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="service-list">
+      @for (item of t().sections.lifestyle.services; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+    <button class="section-cta" (click)="openForm(t().sections.lifestyle.title)">{{ t().cta }}</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <h2 class="contact-title">{{ t().contact.title }}</h2>
+    <div class="section-divider section-divider--gold"></div>
+    <p class="contact-sub">{{ t().contact.sub }}</p>
+    <a href="mailto:aurarelocationlifestyle@gmail.com" class="contact-email">
+      aurarelocationlifestyle&#64;gmail.com
+    </a>
+    <button class="contact-cta" (click)="openForm('General inquiry')">
+      {{ t().contact.btn }}
+    </button>
+  </div>
+  <footer class="site-footer">
+    <p>© {{ year }} AMANI &middot; {{ t().footer }}</p>
+  </footer>
+</section>

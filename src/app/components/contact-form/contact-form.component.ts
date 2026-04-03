@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { environment } from '../../../environments/environment';
+import { Translations } from '../../i18n/translations';
 
 @Component({
   selector: 'app-contact-form',
@@ -12,6 +13,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ContactFormComponent {
   public subject = signal<string>('');
+  public t = signal<Translations['form']>({} as Translations['form']);
 
   public name = signal('');
   public phoneNumber = signal('');
@@ -41,13 +43,14 @@ export class ContactFormComponent {
 
   public onSubmit(): void {
     this.errorMessage.set('');
+    const tr = this.t();
 
     if (!this.name().trim()) {
-      this.errorMessage.set('Please enter your name');
+      this.errorMessage.set(tr.errName);
       return;
     }
     if (this.phoneNumber().length < 7) {
-      this.errorMessage.set('Please enter a valid phone number');
+      this.errorMessage.set(tr.errPhone);
       return;
     }
 
@@ -75,7 +78,7 @@ export class ContactFormComponent {
       })
       .catch(() => {
         this.isLoading.set(false);
-        this.errorMessage.set('Sending error. Please try again or contact us directly.');
+        this.errorMessage.set(tr.errSend);
       });
   }
 

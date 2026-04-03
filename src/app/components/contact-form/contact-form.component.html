@@ -1,93 +1,79 @@
 <div class="form-modal">
 
   @if (formSubmitted()) {
-    <!-- Success state -->
     <div class="text-center py-5">
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-              (click)="close()" aria-label="Close"></button>
+      <button type="button" class="btn-close-modal" (click)="close()" aria-label="Close">✕</button>
       <div class="success-icon-wrap mb-3">
         <i class="bi bi-check2-circle"></i>
       </div>
-      <h3 class="modal-title-text mt-2 mb-2">Request Sent!</h3>
-      <p class="modal-sub mb-4">We will get back to you shortly.</p>
-      <button type="button" class="btn btn-outline-gold px-5 py-2" (click)="close()">OK</button>
+      <h3 class="modal-title-text mt-2 mb-2">{{ t().successTitle }}</h3>
+      <p class="modal-sub mb-4">{{ t().successText }}</p>
+      <button type="button" class="btn-outline-gold" (click)="close()">{{ t().ok }}</button>
     </div>
 
   } @else {
 
-    <!-- Form state -->
     <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="position-relative">
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-1"
-              (click)="close()" aria-label="Close"></button>
+      <button type="button" class="btn-close-modal" (click)="close()" aria-label="Close">✕</button>
 
       <div class="text-center mb-4">
-        <h2 class="modal-title-text">{{ subject() }}</h2>
-        <p class="modal-sub">Fill in your details and we will contact you</p>
+        <h2 class="modal-title-text">AMANI</h2>
       </div>
 
       <div class="mb-3">
-        <label for="contactName" class="form-label-custom">Your Name *</label>
+        <label for="contactName" class="form-label-custom">{{ t().nameLabel }}</label>
         <input
           type="text"
-          class="form-control form-control-modal"
+          class="form-control-modal"
           id="contactName"
           name="contactName"
           [ngModel]="name()" (ngModelChange)="name.set($event)"
-          placeholder="John Smith"
+          [placeholder]="t().namePlaceholder"
           required
         />
       </div>
 
       <div class="mb-3">
-        <label for="phoneNumber" class="form-label-custom">Phone Number *</label>
-        <div class="input-group">
-          <span class="input-group-text input-icon"><i class="bi bi-telephone"></i></span>
-          <input
-            type="tel"
-            inputmode="tel"
-            class="form-control form-control-modal"
-            id="phoneNumber"
-            name="phoneNumber"
-            [ngModel]="phoneNumber()" (ngModelChange)="phoneNumber.set($event)"
-            placeholder="+968 XXXX XXXX"
-            required
-            #phoneInput="ngModel"
-            (input)="onPhoneInput($event)"
-            (keypress)="onPhoneKeyPress($event)"
-          />
-        </div>
+        <label for="phoneNumber" class="form-label-custom">{{ t().phoneLabel }}</label>
+        <input
+          type="tel"
+          inputmode="tel"
+          class="form-control-modal"
+          id="phoneNumber"
+          name="phoneNumber"
+          [ngModel]="phoneNumber()" (ngModelChange)="phoneNumber.set($event)"
+          [placeholder]="t().phonePlaceholder"
+          required
+          (input)="onPhoneInput($event)"
+          (keypress)="onPhoneKeyPress($event)"
+        />
       </div>
 
       <div class="mb-4">
-        <label for="contactMessage" class="form-label-custom">Message (optional)</label>
+        <label for="contactMessage" class="form-label-custom">{{ t().messageLabel }}</label>
         <textarea
-          class="form-control form-control-modal"
+          class="form-control-modal"
           id="contactMessage"
           name="contactMessage"
           [ngModel]="message()" (ngModelChange)="message.set($event)"
-          placeholder="Tell us about your needs..."
+          [placeholder]="t().messagePlaceholder"
           rows="3"
         ></textarea>
       </div>
 
-      <button
-        type="submit"
-        class="btn btn-gold w-100 py-3"
-        [disabled]="isLoading()"
-        [attr.aria-busy]="isLoading()">
+      <button type="submit" class="btn-submit" [disabled]="isLoading()">
         @if (!isLoading()) {
-          <span>Send Request <i class="bi bi-arrow-right ms-2"></i></span>
+          <span>{{ t().submit }}</span>
         } @else {
           <span>
             <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-            Sending...
+            {{ t().sending }}
           </span>
         }
       </button>
 
       @if (errorMessage()) {
         <div class="error-alert mt-3" role="alert">
-          <i class="bi bi-exclamation-triangle-fill me-2"></i>
           {{ errorMessage() }}
         </div>
       }

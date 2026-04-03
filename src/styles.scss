@@ -9,16 +9,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  height: 100%;
 }
 
-// Override ng-bootstrap modal backdrop & dialog for dark theme
-.aura-modal {
+.amani-modal {
   .modal-content {
     background: transparent;
     border: none;
@@ -27,6 +28,20 @@ body {
 }
 
 .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.75) !important;
-  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.72) !important;
+  backdrop-filter: blur(5px);
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.15em solid currentcolor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
 }

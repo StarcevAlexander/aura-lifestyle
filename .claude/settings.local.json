@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:\\\\Users\\\\master\\\\WebstormProjects\\\\в работе\\\\сайт на 3 кнопки\\\\file_0000000081f0720aa6f83dd2d7e0cfe3.png\" \"C:\\\\Users\\\\master\\\\WebstormProjects\\\\в работе\\\\aura-lifestyle\\\\public\\\\bg.jpg\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\master\\\\WebstormProjects\\\\в работе\\\\aura-lifestyle\\\\src\\\\environments\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\master\\\\WebstormProjects\\\\в работе\\\\aura-lifestyle\\\\src\\\\app\\\\components\\\\contact-form\")",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(python -c \"import cv2; import numpy; print\\('cv2 ok'\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
