@@ -8,7 +8,12 @@
     "postbuild": "node scripts/generate-seo.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "seo": "node scripts/generate-seo.js"
+    "seo": "node scripts/generate-seo.js",
+    "cap:build": "ng build && npx cap sync",
+    "cap:android": "ng build && npx cap sync android && npx cap open android",
+    "cap:ios": "ng build && npx cap sync ios && npx cap open ios",
+    "cap:sync": "npx cap sync",
+    "cap:copy": "npx cap copy"
   },
   "private": true,
   "packageManager": "npm@11.11.0",
@@ -20,6 +25,9 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "@capacitor/android": "^8.3.0",
+    "@capacitor/core": "^8.3.0",
+    "@capacitor/ios": "^8.3.0",
     "@emailjs/browser": "^4.4.1",
     "@ng-bootstrap/ng-bootstrap": "^20.0.0",
     "bootstrap": "^5.3.8",
@@ -31,6 +39,9 @@
     "@angular/build": "^21.2.3",
     "@angular/cli": "^21.2.3",
     "@angular/compiler-cli": "^21.2.0",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.3.0",
+    "jimp": "^1.6.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2"
   }

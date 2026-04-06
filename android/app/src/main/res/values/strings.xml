@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AURA Lifestyle</string>
+    <string name="title_activity_main">AURA Lifestyle</string>
+    <string name="package_name">com.aura.lifestyle</string>
+    <string name="custom_url_scheme">com.aura.lifestyle</string>
+</resources>
