@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#D4AF70"/>
+      <stop offset="50%"  stop-color="#F0D090"/>
+      <stop offset="100%" stop-color="#B8963E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background: deep warm dark -->
+  <rect width="64" height="64" rx="10" fill="#1A1612"/>
+
+  <!-- Stylised serif "A" -->
+  <!-- Left leg -->
+  <polygon points="12,52 22,52 32,14 30,14" fill="url(#gold)"/>
+  <!-- Right leg -->
+  <polygon points="34,14 32,14 42,52 52,52" fill="url(#gold)"/>
+  <!-- Crossbar -->
+  <rect x="20" y="36" width="24" height="2.8" rx="1" fill="url(#gold)"/>
+  <!-- Serif top-left -->
+  <rect x="26" y="12" width="8" height="2" rx="1" fill="url(#gold)"/>
+  <!-- Serif bottom-left -->
+  <rect x="8"  y="50" width="10" height="2" rx="1" fill="url(#gold)"/>
+  <!-- Serif bottom-right -->
+  <rect x="46" y="50" width="10" height="2" rx="1" fill="url(#gold)"/>
+</svg>

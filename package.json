@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "postbuild": "node scripts/generate-seo.js",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "seo": "node scripts/generate-seo.js"
   },
   "private": true,
   "packageManager": "npm@11.11.0",

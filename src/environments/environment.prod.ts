@@ -1,9 +1,9 @@
 export const environment = {
   production: true,
   emailjs: {
-    publicKey: 'ycpCgECnpHeKUNYRk',
-    serviceId: 'aitqdmtakuvolgjp',
-    templateId: 'template_6eit02d',
-    toEmail: 'aurarelocationlifestyle@gmail.com',
+    publicKey: 'uQmFIt74oaYwllH17',
+    serviceId: 'service_1ry3wjb',
+    templateId: 'template_amtn39c',
+    toEmail: 'info@amaniom.com',
   },
 };
