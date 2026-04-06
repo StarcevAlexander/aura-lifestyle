@@ -223,6 +223,27 @@ $white-soft: #faf8f4;
   margin: 0 0 1.2rem;
 }
 
+.section-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: $text-mid;
+  letter-spacing: 0.04em;
+  margin: 0.6rem 0 0.4rem;
+  line-height: 1.4;
+}
+
+.section-desc {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  font-weight: 300;
+  color: rgba(107, 95, 82, 0.72);
+  letter-spacing: 0.03em;
+  margin: 0 0 1.4rem;
+  line-height: 1.6;
+}
+
 .section-divider {
   width: 44px;
   height: 1px;
@@ -308,6 +329,18 @@ $white-soft: #faf8f4;
   color: rgba(247, 243, 238, 0.5);
   margin: 0;
   letter-spacing: 0.04em;
+}
+
+.contact-phone {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 400;
+  color: rgba(247, 243, 238, 0.75);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color 0.25s;
+
+  &:hover { color: $cream; }
 }
 
 .contact-email {
